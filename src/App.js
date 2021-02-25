@@ -17,6 +17,13 @@ class App extends Component {
     // update body state
     this.setState({ body: userInput })
   }
+  addComment = ()=> {
+    const newComment = prompt('give a new comment')
+    console.log(newComment)
+    
+    // update body state
+    this.setState({ comments: [...this.state.comments, newComment] })
+  }
 
   render() {
     // map returns an array 
@@ -30,6 +37,8 @@ class App extends Component {
         <h3>Comments:</h3>
         { comments }
         <button onClick={this.changeBody}>Change body</button>
+        <button onClick={this.addComment}>Add Comment</button>
+
       </div>
     );
   }
